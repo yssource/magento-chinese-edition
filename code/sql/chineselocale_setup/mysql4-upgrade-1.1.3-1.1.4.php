@@ -16,23 +16,23 @@ foreach($attributeIds as $attributeid){
     foreach($attributeid as $attribute_code=>$attribute_id){
         if($attribute_code=="group_price" ){
             $attribute = Mage::getModel('eav/entity_attribute')->load($attribute_id);
-            $attribute->setData('frontend_label','¿¿¿¿¿')->save();
+            $attribute->setData('frontend_label','ç”¨æˆ·ç»„ä»·æ ¼')->save();
         }
         if($attribute_code=="tier_price" ){
             $attribute = Mage::getModel('eav/entity_attribute')->load($attribute_id);
-            $attribute->setData('frontend_label','¿¿¿¿')->save();
+            $attribute->setData('frontend_label','å±‚çº§ä»·æ ¼')->save();
         }
         if( $attribute_code=="thumbnail"){
             $attribute = Mage::getModel('eav/entity_attribute')->load($attribute_id);
-            $attribute->setData('frontend_label','¿¿¿')->save();
+            $attribute->setData('frontend_label','ç¼©ç•¥å›¾')->save();
         }
         if( $attribute_code=="small_image" ){
             $attribute = Mage::getModel('eav/entity_attribute')->load($attribute_id);
-            $attribute->setData('frontend_label','¿¿¿¿¿¿')->save();
+            $attribute->setData('frontend_label','åˆ†ç±»é¡µäº§å“å›¾')->save();
         }
         if( $attribute_code=="image"){
             $attribute = Mage::getModel('eav/entity_attribute')->load($attribute_id);
-            $attribute->setData('frontend_label','¿¿¿¿¿')->save();
+            $attribute->setData('frontend_label','äº§å“å°é¢å›¾')->save();
         }
 
         if( $attribute_code=="options_container"){
@@ -91,40 +91,40 @@ $installer->run("
 ");
 
 $regions=array(
-    'BJ'=>'¿¿',
-    'SH'=>'¿¿',
-    'GD'=>'¿¿',
-    'JS'=>'¿¿',
-    'SD'=>'¿¿',
-    'SC'=>'¿¿',
-    'TW'=>'¿¿',
-    'ZJ'=>'¿¿',
-    'LN'=>'¿¿',
-    'HN1'=>'¿¿',
-    'HB'=>'¿¿',
-    'FJ'=>'¿¿',
-    'HB1'=>'¿¿',
-    'HN'=>'¿¿',
-    'HK'=>'¿¿',
-    'HLJ'=>'¿¿¿',
-    'TJ'=>'¿¿',
-    'CQ'=>'¿¿',
-    'JX'=>'¿¿',
-    'SX1'=>'¿¿',
-    'AH'=>'¿¿',
-    'SX'=>'¿¿',
-    'HN2'=>'¿¿',
-    'YN'=>'¿¿',
-    'GS'=>'¿¿',
-    'NMG'=>'¿¿¿',
-    'GZ'=>'¿¿',
-    'XJ'=>'¿¿',
-    'XZ'=>'¿¿',
-    'QH'=>'¿¿',
-    'GX'=>'¿¿',
-    'AM'=>'¿¿',
-    'NX'=>'¿¿',
-    'JL'=>'¿¿'
+    'BJ'=>'åŒ—äº¬',
+    'SH'=>'ä¸Šæµ·',
+    'GD'=>'å¹¿ä¸œ',
+    'JS'=>'æ±Ÿè‹',
+    'SD'=>'å±±ä¸œ',
+    'SC'=>'å››å·',
+    'TW'=>'å°æ¹¾',
+    'ZJ'=>'æµ™æ±Ÿ',
+    'LN'=>'è¾½å®',
+    'HN1'=>'æ²³å—',
+    'HB'=>'æ¹–åŒ—',
+    'FJ'=>'ç¦å»º',
+    'HB1'=>'æ²³åŒ—',
+    'HN'=>'æ¹–å—',
+    'HK'=>'é¦™æ¸¯',
+    'HLJ'=>'é»‘é¾™æ±Ÿ',
+    'TJ'=>'å¤©æ´¥',
+    'CQ'=>'é‡åº†',
+    'JX'=>'æ±Ÿè¥¿',
+    'SX1'=>'å±±è¥¿',
+    'AH'=>'å®‰å¾½',
+    'SX'=>'é™•è¥¿',
+    'HN2'=>'æµ·å—',
+    'YN'=>'äº‘å—',
+    'GS'=>'ç”˜è‚ƒ',
+    'NMG'=>'å†…è’™å¤',
+    'GZ'=>'è´µå·',
+    'XJ'=>'æ–°ç–†',
+    'XZ'=>'è¥¿è—',
+    'QH'=>'é’æµ·',
+    'GX'=>'å¹¿è¥¿',
+    'AM'=>'æ¾³é—¨',
+    'NX'=>'å®å¤',
+    'JL'=>'å‰æ—'
 );
 $country_code = 'CN';
 $locale = 'zh_CN';
