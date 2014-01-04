@@ -8,7 +8,7 @@ $select = $installer->getConnection()->select()
     ->from(
         array('ea' => $installer->getTable('eav/attribute')),
         array('entity_type_id', 'attribute_code', 'attribute_id'))
-    ->where('ea.entity_type_id IN(?)', array($catalog_product));
+        ->where('ea.entity_type_id IN(?)', array($catalog_product));
 foreach ($installer->getConnection()->fetchAll($select) as $row) {
     $attributeIds[$row['entity_type_id']][$row['attribute_code']] = $row['attribute_id'];
 }
@@ -16,25 +16,25 @@ foreach($attributeIds as $attributeid){
     foreach($attributeid as $attribute_code=>$attribute_id){
         if($attribute_code=="group_price" ){
             $attribute = Mage::getModel('eav/entity_attribute')->load($attribute_id);
-            $attribute->setData('frontend_label','ÓÃ»§×é¼Û¸ñ')->save();
+            $attribute->setData('frontend_label','¿¿¿¿¿')->save();
         }
         if($attribute_code=="tier_price" ){
             $attribute = Mage::getModel('eav/entity_attribute')->load($attribute_id);
-            $attribute->setData('frontend_label','²ã¼¶¼Û¸ñ')->save();
+            $attribute->setData('frontend_label','¿¿¿¿')->save();
         }
         if( $attribute_code=="thumbnail"){
             $attribute = Mage::getModel('eav/entity_attribute')->load($attribute_id);
-            $attribute->setData('frontend_label','ËõÂÔÍ¼')->save();
+            $attribute->setData('frontend_label','¿¿¿')->save();
         }
         if( $attribute_code=="small_image" ){
             $attribute = Mage::getModel('eav/entity_attribute')->load($attribute_id);
-            $attribute->setData('frontend_label','·ÖÀàÒ³²úÆ·Í¼')->save();
+            $attribute->setData('frontend_label','¿¿¿¿¿¿')->save();
         }
         if( $attribute_code=="image"){
             $attribute = Mage::getModel('eav/entity_attribute')->load($attribute_id);
-            $attribute->setData('frontend_label','²úÆ··âÃæÍ¼')->save();
+            $attribute->setData('frontend_label','¿¿¿¿¿')->save();
         }
-    
+
         if( $attribute_code=="options_container"){
             $attribute = Mage::getModel('eav/entity_attribute')->load($attribute_id);
             $attribute->setData('default_value','container1')->save();
@@ -42,8 +42,6 @@ foreach($attributeIds as $attributeid){
     }
 }
 $installer->endSetup();
-
-
 
 $installer = new Mage_Customer_Model_Entity_Setup('core_setup');
 $installer->startSetup();
@@ -56,7 +54,7 @@ $select = $installer->getConnection()->select()
     ->from(
         array('ea' => $installer->getTable('eav/attribute')),
         array('entity_type_id', 'attribute_code', 'attribute_id'))
-    ->where('ea.entity_type_id IN(?)', array($customer, $customerAddress));
+        ->where('ea.entity_type_id IN(?)', array($customer, $customerAddress));
 
 foreach ($installer->getConnection()->fetchAll($select) as $row) {
     $attributeIds[$row['entity_type_id']][$row['attribute_code']] = $row['attribute_id'];
@@ -67,10 +65,10 @@ foreach($attributeIds as $attributeid){
             $customerAttrIds[]= $attribute_id;
         }
         if($attribute_code=="lastname"){
-        
+
             $customerAttrIds[]= $attribute_id;
         }
-    
+
     }
 }
 $customer_eav_attributeTable = $installer->getTable('customer_eav_attribute');
@@ -79,15 +77,8 @@ foreach($customerAttrIds as $_attribute_id){
         UPDATE `{$customer_eav_attributeTable}` SET
         `validate_rules`= Null
         WHERE `attribute_id`='{$_attribute_id}'
-    ");
+        ");
 }
-
-
-
-
-
-
-        
 
 $directory_country_region = $installer->getTable('directory_country_region');
 $directory_country_region_name = $installer->getTable('directory_country_region_name');
@@ -100,66 +91,56 @@ $installer->run("
 ");
 
 $regions=array(
- 'BJ'=>'±±¾©',
- 'SH'=>'ÉÏº£',
-'GD'=>'¹ã¶«',
- 'JS'=>'½­ËÕ',
-'SD'=>'É½¶«',
- 'SC'=>'ËÄ´¨',
-'TW'=>'Ì¨Íå',
- 'ZJ'=>'Õã½­',
-'LN'=>'ÁÉÄş',
- 'HN1'=>'ºÓÄÏ',
-'HB'=>'ºş±±',
- 'FJ'=>'¸£½¨',
-'HB1'=>'ºÓ±±',
- 'HN'=>'ºşÄÏ',
-'HK'=>'Ïã¸Û',
- 'HLJ'=>'ºÚÁú½­',
-'TJ'=>'Ìì½ò',
- 'CQ'=>'ÖØÇì',
-'JX'=>'½­Î÷',
- 'SX1'=>'É½Î÷',
-'AH'=>'°²»Õ',
- 'SX'=>'ÉÂÎ÷',
-'HN2'=>'º£ÄÏ',
- 'YN'=>'ÔÆÄÏ',
-'GS'=>'¸ÊËà',
- 'NMG'=>'ÄÚÃÉ¹Å',
-'GZ'=>'¹óÖİ',
- 'XJ'=>'ĞÂ½®',
-'XZ'=>'Î÷²Ø',
- 'QH'=>'Çàº£',
-'GX'=>'¹ãÎ÷',
- 'AM'=>'°ÄÃÅ',
-'NX'=>'ÄşÏÄ',
-'JL'=>'¼ªÁÖ' 
+    'BJ'=>'¿¿',
+    'SH'=>'¿¿',
+    'GD'=>'¿¿',
+    'JS'=>'¿¿',
+    'SD'=>'¿¿',
+    'SC'=>'¿¿',
+    'TW'=>'¿¿',
+    'ZJ'=>'¿¿',
+    'LN'=>'¿¿',
+    'HN1'=>'¿¿',
+    'HB'=>'¿¿',
+    'FJ'=>'¿¿',
+    'HB1'=>'¿¿',
+    'HN'=>'¿¿',
+    'HK'=>'¿¿',
+    'HLJ'=>'¿¿¿',
+    'TJ'=>'¿¿',
+    'CQ'=>'¿¿',
+    'JX'=>'¿¿',
+    'SX1'=>'¿¿',
+    'AH'=>'¿¿',
+    'SX'=>'¿¿',
+    'HN2'=>'¿¿',
+    'YN'=>'¿¿',
+    'GS'=>'¿¿',
+    'NMG'=>'¿¿¿',
+    'GZ'=>'¿¿',
+    'XJ'=>'¿¿',
+    'XZ'=>'¿¿',
+    'QH'=>'¿¿',
+    'GX'=>'¿¿',
+    'AM'=>'¿¿',
+    'NX'=>'¿¿',
+    'JL'=>'¿¿'
 );
 $country_code = 'CN';
 $locale = 'zh_CN';
 
-
 foreach ($regions as $region_code => $region_name) {
- 
-    // insert region 
+
+    //$region_name = iconv("gbk","UTF-8",$region_name); //
+    // insert region
     $sql = "INSERT INTO `{$directory_country_region}` (`region_id`,`country_id`,`code`,`default_name`) VALUES (NULL,'{$country_code}','{$region_code}','{$region_name}')";
     $installer->run($sql);
- 
+
     // get new region id for next query
     $region_id = $installer->getConnection()->lastInsertId();
     // insert region name
     $sql = "INSERT INTO `{$directory_country_region_name}` (`locale`,`region_id`,`name`) VALUES ('{$locale}','{$region_id}','{$region_name}')";
     $installer->run($sql);
 }
-
-
-
-
-
-
-
-
-
-
 
 $installer->endSetup();
